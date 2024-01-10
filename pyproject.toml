@@ -1,0 +1,13 @@
+[project]
+name = "product_management_app"
+authors = [{ name = "Juan Oitavén", email = "joitgar@aulaestudio.es" }]
+description = "Product management app by Juan Oitavén."
+version = "0.1"
+readme = "README.md"
+dependencies = ["pymongo[srv]", "rich"]
+
+[project.optional-dependencies]
+dev = ["black", "flake8", "isort"]
+
+[project.scripts]
+pma = "product_management_app.__main__:main"
