@@ -4,12 +4,6 @@
 #
 #    pip-compile pyproject.toml
 #
-click==8.1.7
-    # via typer
-colorama==0.4.6
-    # via
-    #   click
-    #   typer
 dnspython==2.4.2
     # via pymongo
 markdown-it-py==3.0.0
@@ -21,12 +15,4 @@ pygments==2.17.2
 pymongo[srv]==4.6.1
     # via product_management_app (pyproject.toml)
 rich==13.7.0
-    # via
-    #   product_management_app (pyproject.toml)
-    #   typer
-shellingham==1.5.4
-    # via typer
-typer[all]==0.9.0
     # via product_management_app (pyproject.toml)
-typing-extensions==4.9.0
-    # via typer
