@@ -22,8 +22,12 @@ mccabe==0.7.0
     # via flake8
 mdurl==0.1.2
     # via markdown-it-py
+mypy==1.8.0
+    # via product_management_app (pyproject.toml)
 mypy-extensions==1.0.0
-    # via black
+    # via
+    #   black
+    #   mypy
 packaging==23.2
     # via black
 pathspec==0.12.1
@@ -40,3 +44,5 @@ pymongo[srv]==4.6.1
     # via product_management_app (pyproject.toml)
 rich==13.7.0
     # via product_management_app (pyproject.toml)
+typing-extensions==4.9.0
+    # via mypy
