@@ -41,7 +41,7 @@ def main():
 
     # Then remove the created test data.
     controller.delete_data(test_collection, data=test_data)
-    print(f"Removed test document")
+    print("Removed test document")
 
     show_menu(controller, database)
 
@@ -63,7 +63,7 @@ def show_menu(controller: MongoDbController, database: Database):
 
     selected_option = int(input(f"Select an option (1-{len(options)}): "))
     collection = database[DatabaseSecrets.collection_name]
-    
+
     if selected_option == 1:
         table = Table(header_style="bold red")
         table.add_column("ID", style="dim", width=12)
@@ -76,7 +76,7 @@ def show_menu(controller: MongoDbController, database: Database):
                 str(entry["_id"]), str(entry["name"]), str(entry["release_date"])
             )
         rich.print(table)
-        
+
     elif selected_option == 2:
         entry = controller.show_single_product(collection)
         if entry is None:
@@ -88,19 +88,19 @@ def show_menu(controller: MongoDbController, database: Database):
         table.add_column("Release Date", justify="right")
         table.add_row(str(entry["_id"]), str(entry["name"]), str(entry["release_date"]))
         rich.print(table)
-        
+
     elif selected_option == 3:
         controller.store_new_product(collection)
-        
+
     elif selected_option == 4:
         controller.update_a_product(collection)
-        
+
     elif selected_option == 5:
         controller.remove_a_product(collection)
-        
+
     elif selected_option == 6:
         raise SystemExit(0)
-    
+
     else:
         print()
         show_menu(controller, database)

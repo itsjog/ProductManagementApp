@@ -11,14 +11,14 @@ class MongoDbController:
         self.client = client
 
     def delete_data(self, collection: Collection[DefaultData], data: DefaultData):
-        print(f"Removing test document with following data:")
+        print("Removing test document with following data:")
         pprint.pprint(data, indent=4, width=100)
         return collection.delete_one(data).deleted_count
 
     def insert_test_data(
         self, collection: Collection[DefaultData], test_data: DefaultData
     ) -> int:
-        print(f"Adding test document with data: ")
+        print("Adding test document with data: ")
         pprint.pprint(test_data, indent=4, width=100)
         return collection.insert_one(test_data).inserted_id
 
